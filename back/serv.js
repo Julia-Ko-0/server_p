@@ -33,9 +33,9 @@ function get_book({res}){
 }
 
 
-app.get('/', get_book)
+app.get('/b', get_book)
 
 app.listen(port, ()=>{
-    console.log('server start')
+    console.log(`server start  ${port}`)
 
 })
