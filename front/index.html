@@ -5,19 +5,40 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <script src="./index.js"  defer ></script>
 </head>
 
 <body>
-    <script src="scripts/index.js" type="module" defer></script>
+  
     <main>
         <div id="div">
             <button id="book">книги</button>
+            <button id="autor">Авторы</button>
+            <button id="ganre">Жанры</button>
+            <div id='d_autor' class="d_autor">
+                <input placeholder="имя автора" id="i1g">
+                <input placeholder="год рождения" id="i2g">
+                <button id="btn_post_autor">добавить</button>
+            </div>
+            <div id='d_ganr' class="d_autor">
+                <input placeholder="название жанра" id="i1">
+                <input placeholder="описание" id="i2">
+                <button id="btn_post">добавить</button>
+            </div>
+            <div id='d_b' class="d_autor">
+                <input placeholder="название"id="i1b">
+                <input placeholder="id жанра" id="i2b">
+                <input placeholder="id автора"id="i3b">
+                <input placeholder="количество" id="i4b">
+                <button id="btn_post_b">добавить</button>
+            </div>
             <div id="conteiner">
 
             </div>
         </div>
     </main>
+  
 </body>
 
 </html>
