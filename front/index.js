@@ -60,14 +60,35 @@ let  book = document.getElementById('book')
 let  autor = document.getElementById('autor')
 let  ganre = document.getElementById('ganre')
 let conteiner = document.getElementById('conteiner')
-let btn_post = document.getElementById('btn_post')
+
 let i1 = document.getElementById('i1')
 let i2 = document.getElementById('i2')
+let btn_post = document.getElementById('btn_post')
+
+let btn_post_autor = document.getElementById('btn_post_autor')
+let i1g = document.getElementById('i1g')
+let i2g = document.getElementById('i2g')
+
+let btn_post_b = document.getElementById('btn_post_b')
+let i1b = document.getElementById('i1b')
+let i2b = document.getElementById('i2b')
+let i3b = document.getElementById('i3b')
+let i4b = document.getElementById('i4b')
+
+btn_post_b.addEventListener('click',()=>{
+    PostBook(i1b.value,i2b.value,i3b.value,i4b.value)
+})
+btn_post_autor.addEventListener('click',()=>{
+    PostAutor(i1g.value,i2g.value)
+})
 btn_post.addEventListener('click',()=>{
     // console.log('ot',i1.value,i2.value)
     PostGanre(i1.value,i2.value)
 
 })
+
+
+
 function CrContent(id_,n1,name_,n2,ganr_,n3,author_,n4,count){
     let id= document.createElement('h1')
     let name= document.createElement('h1')
@@ -128,12 +149,14 @@ autor.addEventListener('click', async ()=>{
     
 })
 ganre.addEventListener('click', async ()=>{
-    let text = await GetServ(api_ur+'/ganre')
+ 
+    console.log('lll')
     div_b.style.display = 'none'
     div_a.style.display='none'
     div_g.style.display='flex'
-    console.log(text)
     conteiner.innerHTML=''
+    let text = await GetServ(api_ur+'/ganre')
+    console.log(text)
     for(let i=0;i<text.length;i++){
         CrContent(text[i].id_genre,text[i].ganre,text[i].opisanie,
             '',
