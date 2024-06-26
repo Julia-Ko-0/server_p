@@ -63,11 +63,18 @@ function get_moving({res}){
     }
   }); 
 }
+
+
 async function post_autor(req,res){
+  console.log(req.body.autor_names)
+  console.log(req.body.autor_birthdays)
   await bd.connect()
-  bd.query(`Call add_autor('${req.body.autor_names}','${req.body.autor_birthdays}')`)
+  bd.query(`Call add_autor('${req.body.autor_names}','${req.body.autor_birthday}')`)
   return res.json({mas:'yspex'})
 }
+
+
+
 async function post_ganr(req,res){
   await bd.connect()
   bd.query(`Call add_ganre('${req.body.name_ganr}','${req.body.opis_ganr}')`)
